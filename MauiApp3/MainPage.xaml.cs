@@ -2,23 +2,52 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            UpdateLoginButtonColor(); // ustawia kolor na starcie
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private void OnEmailTextChanged(object sender, TextChangedEventArgs e)
         {
-            count++;
+            string email = e.NewTextValue ?? string.Empty;
+            bool isValid = email.Contains("@") && email.Contains(".");
+            EmailErrorLabel.IsVisible = !isValid;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            UpdateLoginButtonColor();
+        }
+
+        private void OnPasswordTextChanged(object sender, TextChangedEventArgs e)
+        {
+            string password = e.NewTextValue ?? string.Empty;
+            bool isValid = password.Length >= 6;
+            PasswordErrorLabel.IsVisible = !isValid;
+
+            UpdateLoginButtonColor();
+        }
+
+        void OnLoginClicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Zalogowano", "Zalogowałeś się pomyślnie", "OK");
+        }
+
+        void UpdateLoginButtonColor()
+        {
+            string email = EmailEntry.Text ?? "";
+            string password = PasswordEntry.Text ?? "";
+
+            bool emailValid = email.Contains("@") && email.Contains(".");
+            bool passwordValid = password.Length >= 6;
+
+            if (emailValid && passwordValid)
+            {
+                LoginButton.BackgroundColor = Color.FromArgb("#22B14C");
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                LoginButton.BackgroundColor = Colors.Gray;
+            }
         }
     }
+    
 }

@@ -5,7 +5,7 @@
         public MainPage()
         {
             InitializeComponent();
-            UpdateLoginButtonColor(); // ustawia kolor na starcie
+            UpdateLoginButtonColor();
         }
 
         private void OnEmailTextChanged(object sender, TextChangedEventArgs e)
@@ -13,7 +13,6 @@
             string email = e.NewTextValue ?? string.Empty;
             bool isValid = email.Contains("@") && email.Contains(".");
             EmailErrorLabel.IsVisible = !isValid;
-
             UpdateLoginButtonColor();
         }
 
@@ -22,7 +21,6 @@
             string password = e.NewTextValue ?? string.Empty;
             bool isValid = password.Length >= 6;
             PasswordErrorLabel.IsVisible = !isValid;
-
             UpdateLoginButtonColor();
         }
 

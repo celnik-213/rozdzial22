@@ -51,3 +51,33 @@
     }
     
 }
+/*
+***********************************************
+    nazwa funkcji: OnEmailTextChanged
+    opis funkcji: Funkcja sprawdza czy wszystkie wymogi w polu email są spełnionie jeżeli nie to wyświetla stosowny komunikat.
+    parametry: Brak
+    zwracany typ i opis: Brak
+    autor: Wiktor
+************************************************
+***********************************************
+    nazwa funkcji: OnPassworTextChanged
+    opis funkcji: Funkcja sprawdza czy wszystkie wymogi w polu hasło są spełnionie jeżeli nie to wyświetla stosowny komunikat.
+    parametry: Brak
+    zwracany typ i opis: Brak
+    autor: Wiktor
+************************************************
+***********************************************
+    nazwa funkcji: OnLoginClicked
+    opis funkcji: Funkcja wyświetla komunikat o pozytywnym zalogowaniu.
+    parametry: Brak
+    zwracany typ i opis: Brak
+    autor: Wiktor
+************************************************
+***********************************************
+    nazwa funkcji: UpdateLoginButtonColor
+    opis funkcji: Funkcja sprawdza czy wszystkie pola zostały uzupełnione poprawnie a następnie zmienia kolor przycisku na zielony.
+    parametry: Brak
+    zwracany typ i opis: Brak
+    autor: Wiktor
+************************************************
+*/
